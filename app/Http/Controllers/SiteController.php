@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
+
 class SiteController extends Controller
 {
     public function viewHome()
@@ -11,7 +13,7 @@ class SiteController extends Controller
 
     public function fetchRates()
     {
-        return response()->json();
+        return Currency::paginate();
     }
 
     public function convertCurrency()
