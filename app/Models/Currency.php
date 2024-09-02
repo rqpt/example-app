@@ -4,15 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Arr;
 
 class Currency extends Model
 {
     use \Sushi\Sushi;
 
-    public static function getRates() {}
+    protected $schema = [
+        'id' => 'integer',
+        'name' => 'string',
+        'rate' => 'float',
+    ];
 
-    public function getRows()
+    public function getRows(): array
     {
-        return Http::get('https://www.completeapi.com/free_currencies.min.json');
+        $forexRates = json_decode(Http::get('https://www.completeapi.com/free_currencies.min.json')->body(), true)['forex'];
+
+        return array_values(Arr::map($forexRates, fn ($rate, $currency) => ['currency' => $currency, 'rate' => $rate]));
+    }
+
+    protected function sushiShouldCache(): bool
+    {
+        return true;
     }
 }
