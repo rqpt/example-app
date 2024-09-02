@@ -12,7 +12,7 @@ class Currency extends Model
 
     protected $schema = [
         'id' => 'integer',
-        'name' => 'string',
+        'pair' => 'string',
         'rate' => 'float',
     ];
 
@@ -20,7 +20,7 @@ class Currency extends Model
     {
         $forexRates = json_decode(Http::get('https://www.completeapi.com/free_currencies.min.json')->body(), true)['forex'];
 
-        return array_values(Arr::map($forexRates, fn ($rate, $currency) => ['currency' => $currency, 'rate' => $rate]));
+        return array_values(Arr::map($forexRates, fn ($rate, $currency) => ['pair' => $currency, 'rate' => $rate]));
     }
 
     protected function sushiShouldCache(): bool
