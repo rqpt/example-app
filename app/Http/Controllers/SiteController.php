@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Currency;
 
-class SiteController extends Controller
+class SiteController
 {
     public function viewHome()
     {
