@@ -13,7 +13,7 @@ class SiteController
 
     public function fetchRates()
     {
-        return Currency::paginate();
+        return Currency::all();
     }
 
     public function convertCurrency()
