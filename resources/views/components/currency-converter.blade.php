@@ -25,7 +25,7 @@
           Select a currency to compare from...
         </option>
 
-        <!--The options here will be populated by the ajax call-->
+        <!--The options here will be populated by an ajax call-->
         <!--Please refer to resources/js/app.js-->
 
       </select>
@@ -61,4 +61,4 @@
   </div>
 </section>
 
-  <hr>
+<hr>

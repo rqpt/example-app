@@ -12,7 +12,7 @@
     </thead>
     <tbody>
 
-      <!--The table body here will be populated by the ajax call-->
+      <!--The table body here will be populated by an ajax call-->
       <!--Please refer to resources/js/app.js-->
 
     </tbody>
