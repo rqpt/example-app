@@ -18,8 +18,7 @@
             Quote Currency
             <select name="quote"
               aria-label="Select a currency to compare from..."
-              required
-              :aria-invalid="quote">
+              required>
               <option selected
                 disabled
                 value="">
@@ -34,19 +33,19 @@
 
           <label>
             Amount
-          <input type="number"
-            required
-            x-model="amount"
-            x-effect="$refs.amountValidHelper.textContent = amount < 0 || isNaN(parseInt(amount)) ? 'Please provide a positive number.' : 'Valid amount'; $el.setAttribute('aria-invalid', amount < 0 || isNaN(parseInt(amount)));"
-            name="amount"
-            :value="amount"
-            placeholder="Number"
-            min="0"
-            aria-label="Number"
-            aria-invalid="false"
-            aria-describedby="amount-valid-helper">
-          <small id="amount-valid-helper"
-            x-ref="amountValidHelper"></small>
+            <input type="number"
+              required
+              x-model="amount"
+              x-effect="$refs.amountValidHelper.textContent = amount < 0 || isNaN(parseInt(amount)) ? 'Please provide a positive number.' : 'Valid amount'; $el.setAttribute('aria-invalid', amount < 0 || isNaN(parseInt(amount)));"
+              name="amount"
+              :value="amount"
+              placeholder="Number"
+              min="0"
+              aria-label="Number"
+              aria-invalid="false"
+              aria-describedby="amount-valid-helper">
+            <small id="amount-valid-helper"
+              x-ref="amountValidHelper"></small>
           </label>
         </fieldset>
 
@@ -85,7 +84,7 @@
           currencies.forEach(function(currency) {
             const quoteCurrency = currency.pair.split('_')[1];
             $('select').append(
-              `<option value="${quoteCurrency} @click="quote = true">${quoteCurrency}</option>`);
+              `<option value="${currency.id}" @click="quote = true">${quoteCurrency}</option>`);
             $('table tbody').append('<tr><td>' + currency.pair + '</td><td>' + currency.rate +
               '</td></tr>');
           });
@@ -94,6 +93,19 @@
           console.error("Error fetching data from /rates endpoint.");
         }
       });
+
+      $('button').click(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+          url: '/convert',
+          method: 'POST',
+          data: $('form').serialize(),
+          success: function(response) {
+            $('#result').html('<hr>' + response + '<hr>');
+          }
+        })
+      })
     });
   </script>
-</x-layouts>
+  </x-layouts>
