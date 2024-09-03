@@ -20,9 +20,11 @@ git clone https://github.com/rqpt/example-app \
 && cd example-app \
 && cp .env.example .env \
 && touch ./database/database.sqlite \
-&& composer install \
+&& composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
 && php artisan migrate \
+&& php artisan icons:cache \
+&& php artisan optimize \
 && php artisan serve
 ```
 
