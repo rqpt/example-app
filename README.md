@@ -83,14 +83,6 @@ git clone https://github.com/rqpt/example-app \
 
 .
 
-.
-
-.
-
-.
-
-.
-
 ![20240903_13h59m05s_grim](https://github.com/user-attachments/assets/6b58aea7-39fd-46da-ac77-1ebc0a2a91bb)
 
 ![20240903_13h59m49s_grim](https://github.com/user-attachments/assets/99d50d5d-21b5-480a-b702-30ddc1d63403)
