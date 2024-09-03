@@ -20,6 +20,7 @@ git clone https://github.com/rqpt/example-app \
 && cd example-app \
 && cp .env.example .env \
 && touch ./database/database.sqlite \
+&& mkdir ./resources/svg \
 && composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
 && php artisan migrate \
