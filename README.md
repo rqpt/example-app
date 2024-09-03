@@ -14,8 +14,8 @@ Also there isn't any handling in place for network issues with the API or invali
 
 ## Demo site
 
-I can spin up a demo site if you would prefer not to install anything. I believe they only
-last for one hour, so if it is down, just drop me a message.
+I spinned up a demo site in case you prefer not to install anything. I believe they only
+last for one hour, so if it is down and you want to see it, just drop me a message.
 
 http://teruza-rqpt.laravel-sail.site:8080/
 
