@@ -43,6 +43,6 @@ git clone https://github.com/rqpt/example-app \
 
 ![20240902_23h10m33s_grim](https://github.com/user-attachments/assets/67ef8624-3f6a-4cf8-b11e-6ccb07048757)
 
-![20240902_23h09m40s_grim](https://github.com/user-attachments/assets/b57c8209-5b14-4a03-9597-3ae936d5c7f8)
+![20240903_09h27m37s_grim](https://github.com/user-attachments/assets/1d898c01-62f4-4a6a-8a7a-abc1a87ee927)
 
-![20240902_23h11m40s_grim](https://github.com/user-attachments/assets/3cfe45fa-cf47-4023-9dfe-964b96931456)
+![20240903_09h28m47s_grim](https://github.com/user-attachments/assets/53f70787-aaf5-4ff8-8055-76ff7e8ce6a5)
