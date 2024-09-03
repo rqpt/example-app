@@ -1,18 +1,5 @@
 <x-layouts.app>
-  <header>
-    <nav>
-      <ul>
-      </ul>
-      <ul>
-        <li>
-          <x-theme-toggle />
-        </li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
-
     <h1>Forex Conversion & Reference</h1>
 
     <section x-data="{

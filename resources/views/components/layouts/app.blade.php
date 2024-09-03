@@ -30,6 +30,7 @@
     <title>Teruza</title>
   </head>
   <body>
+    <x-theme-toggle />
 
     {{ $slot }}
 
