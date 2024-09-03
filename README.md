@@ -13,37 +13,20 @@ Also there isn't any handling in place for network issues with the API or invali
 
 ## Setup
 
-1. Clone the project
+1. Run this oneliner
 
 ```bash
-git clone https://github.com/rqpt/example-app && cd example-app
+git clone https://github.com/rqpt/example-app \
+&& cd example-app \
+&& cp .env.example .env \
+&& touch ./database/database.sqlite \
+&& composer install \
+&& npm install \
+&& php artisan migrate \
+&& php artisan serve
 ```
 
-2. Make a .env from the existing example file
-
-```bash
-cp .env.example .env
-```
-
-3. Install dependencies
-
-```bash
-composer install && npm install
-```
-
-4. Run migrations
-
-```bash
-php artisan migrate
-```
-
-5. Serve the application
-
-```bash
-php artisan serve
-```
-
-6. Navigate to http://127.0.0.1:8000
+2. Navigate to http://127.0.0.1:8000
 
 ## Screenshots
 
