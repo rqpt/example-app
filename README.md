@@ -27,7 +27,8 @@ git clone https://github.com/rqpt/example-app \
 && php artisan key:generate \
 && php artisan icons:cache \
 && php artisan optimize \
-&& php artisan serve
+&& php artisan serve \
+&& xdg-open http://127.0.0.1:8000
 ```
 
 2. Navigate to http://127.0.0.1:8000
