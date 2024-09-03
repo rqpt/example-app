@@ -7,7 +7,6 @@
         <button class="pico-button-override"
           data-tooltip="Theme"
           data-placement="bottom"
-          style="background: transparent; border: transparent;"
           aria-label="Toggle theme"
           @click="lightMode = !lightMode">
           <x-fas-moon x-show="!lightMode" />

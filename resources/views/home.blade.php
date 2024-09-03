@@ -10,7 +10,6 @@
 
     <section x-data="{
         amount: 0,
-        quote: false,
         amountInvalid: (amount) => amount < 0 || isNaN(parseInt(amount)),
         invalidMessage: 'Positive amounts only...and no letters! 😡',
         validMessage: 'Valid amount! 😄',
@@ -91,7 +90,7 @@
           currencies.forEach(function(currency) {
             const quoteCurrency = currency.pair.split('_')[1];
             $('select').append(
-              `<option value="${currency.id}" @click="quote = true">${quoteCurrency}</option>`);
+              `<option value="${currency.id}">${quoteCurrency}</option>`);
             $('table tbody').append('<tr><td>' + currency.pair + '</td><td>' + currency.rate +
               '</td></tr>');
           });
