@@ -29,6 +29,41 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <style>
+      /* Scrollbar  */
+
+      :root {
+          --scrollbarBG: #0097A7;
+          --thumbBG: #00895a;
+      }
+
+      ::-webkit-scrollbar {
+          width: 0.5em;
+      }
+
+      ::-webkit-scrollbar-track {
+          background: var(--scrollbarBG);
+      }
+
+      ::-webkit-scrollbar-thumb {
+          background: var(--thumbBG);
+      }
+
+      @supports (scrollbar-color: red blue) {
+          * {
+              scrollbar-color: var(--scrollbarBG) transparent;
+          }
+      }
+
+      /* Pico Overrides */
+
+      .pico-button-override {
+          background: transparent;
+          border: transparent;
+      }
+
+    </style>
+
     <title>Teruza</title>
   </head>
   <body>
