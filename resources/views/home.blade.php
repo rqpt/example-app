@@ -67,7 +67,7 @@
 
       <!--Result-->
       <div>
-        <strong id="result"></strong>
+          <strong id="result"></strong>
       </div>
     </section>
 
@@ -125,7 +125,7 @@
           method: 'POST',
           data: $('form').serialize(),
           success: function(response) {
-            $('#result').html('<hr>' + response);
+            $('#result').html('<hr>The converted value is <mark>' + response + '</mark>');
           },
           error: function(xhr, status, error) {
             console.error("Error calculating the currency value.");
