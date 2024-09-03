@@ -32,6 +32,7 @@ class Currency extends Model
     */
     public function getRows(): array
     {
+        // See ExchangeRateServiceProvider for macro implementation.
         $forexRates = Http::exchangeRates()->get('/')->json()['forex'];
 
         $id = 0;
