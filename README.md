@@ -61,27 +61,19 @@ git clone https://github.com/rqpt/example-app \
 
 **FLASHBANG WARNING!**
 
-.
+**FLASHBANG WARNING!**
 
-.
+**FLASHBANG WARNING!**
 
-.
+**FLASHBANG WARNING!**
 
-.
+**FLASHBANG WARNING!**
 
-.
+**FLASHBANG WARNING!**
 
-.
+**FLASHBANG WARNING!**
 
-.
-
-.
-
-.
-
-.
-
-.
+**FLASHBANG WARNING!**
 
 .
 
