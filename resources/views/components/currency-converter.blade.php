@@ -1,3 +1,5 @@
+<hr>
+
 <section x-data="{
     amount: 0,
     amountInvalid: (amount) => amount < 0 || isNaN(parseInt(amount)),
@@ -58,3 +60,5 @@
     <strong id="result"></strong>
   </div>
 </section>
+
+  <hr>
