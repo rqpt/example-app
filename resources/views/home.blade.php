@@ -67,7 +67,7 @@
 
       <!--Result-->
       <div>
-          <strong id="result"></strong>
+        <strong id="result"></strong>
       </div>
     </section>
 
@@ -134,4 +134,4 @@
       })
     });
   </script>
-  </x-layouts>
+</x-layouts>
