@@ -14,7 +14,7 @@ Also there isn't any handling in place for network issues with the API or invali
 
 ## Demo site
 
-I spinned up a demo site in case you prefer not to install anything. I believe they only
+I spun up a demo site in case you prefer not to install anything. I believe they only
 last for one hour, so if it is down by the time you're reading this and you would like to
 see it, just drop me a message.
 
