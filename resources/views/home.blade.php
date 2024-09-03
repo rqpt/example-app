@@ -1,14 +1,14 @@
 <x-layouts.app>
   <header>
-        <nav>
-            <ul>
-            </ul>
-            <ul>
-                <li>
-                  <x-theme-toggle />
-                </li>
-            </ul>
-        </nav>
+    <nav>
+      <ul>
+      </ul>
+      <ul>
+        <li>
+          <x-theme-toggle />
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -105,15 +105,24 @@
         }
       });
 
-      $('button').click(function(event) {
-        event.preventDefault();
+      $('form').on('submit', function(e) {
+        e.preventDefault();
+
+        //$.ajaxSetup({
+        //  headers: {
+        //  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //  }
+        //});
 
         $.ajax({
           url: '/convert',
           method: 'POST',
           data: $('form').serialize(),
           success: function(response) {
-            $('#result').html('<hr>' + response + '<hr>');
+            $('#result').text('<hr>' + response + '<hr>');
+          },
+          error: function(xhr, status, error) {
+            console.error("Error calculating the currency value.");
           }
         })
       })

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html
-lang="en"
-x-ref="root"
-x-data="{ lightMode: window.matchMedia('(prefers-color-scheme: light)').matches }">
+<html lang="en"
+  x-ref="root"
+  x-data="{ lightMode: window.matchMedia('(prefers-color-scheme: light)').matches }">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
+
+    <meta name="csrf-token"
+      content="{{ csrf_token() }}">
 
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -18,7 +20,8 @@ x-data="{ lightMode: window.matchMedia('(prefers-color-scheme: light)').matches 
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.jade.min.css">
 
     <!-- alpine for some simple js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <title>Teruza</title>
   </head>
