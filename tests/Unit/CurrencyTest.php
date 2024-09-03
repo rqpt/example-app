@@ -11,10 +11,10 @@ it('can convert currencies', function () {
     $amount = 16;
 
     $forexRates = [
-        'FOO_BAR' => 7.8262,
-        'BAZ_BUZZ' => 7.732171,
-        'EZ_PZ' => 28.938,
-        'BEE_BOO' => 912.35,
+        'FOO' => 7.8262,
+        'BAR' => 7.732171,
+        'BAZ' => 28.938,
+        'FIZZ' => 912.35,
     ];
 
     $expectedResults = [
@@ -26,10 +26,10 @@ it('can convert currencies', function () {
 
     $actualResults = [];
 
-    foreach ($forexRates as $pair => $rate) {
+    foreach ($forexRates as $code => $rate) {
         $currency = new Currency;
 
-        $currency->pair = $pair;
+        $currency->code = $code;
         $currency->rate = $rate;
 
         $actualResults[] = $currency->convert($amount);

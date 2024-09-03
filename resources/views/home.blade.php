@@ -8,68 +8,80 @@
   <main>
     <h1>Forex Conversion & Reference</h1>
 
+    <hr>
+
     <section x-data="{
         amount: 0,
         amountInvalid: (amount) => amount < 0 || isNaN(parseInt(amount)),
         invalidMessage: 'Positive amounts only...and no letters! 😡',
         validMessage: 'Valid amount! 😄',
     }">
-      <h2>Convert</h2>
+      <hgroup>
+        <h2>Convert</h2>
+        <p>How many USD for a specified currency.</p>
+      </hgroup>
 
       <form action="/convert"
         method="POST">
         @csrf
-        <fieldset>
-          <label>
-            Quote Currency
-            <select name="quote"
-              aria-label="Select a currency to compare from..."
-              required>
-              <option selected
-                disabled
-                value="">
-                Select a currency to compare from...
-              </option>
+        <label>
+          Quote Currency
+          <select name="code"
+            aria-label="Select a currency to compare from..."
+            required>
+            <option selected
+              disabled
+              value="">
+              Select a currency to compare from...
+            </option>
 
-              <!--The options here will be populated by the ajax call-->
+            <!--The options here will be populated by the ajax call-->
 
-            </select>
+          </select>
 
-          </label>
+        </label>
 
-          <label>
-            Amount
-            <input type="number"
-              required
-              x-model="amount"
-              x-effect="$refs.validationHelper.textContent = amountInvalid(amount) ? invalidMessage : validMessage; $el.setAttribute('aria-invalid', amountInvalid(amount));"
-              name="amount"
-              :value="amount"
-              placeholder="Number"
-              min="0"
-              aria-label="Number"
-              aria-invalid="false"
-              aria-describedby="validation-helper">
-            <small id="validation-helper"
-              x-ref="validationHelper"></small>
-          </label>
+        <label for="amount">
+          Amount
+        </label>
+        <fieldset role="group">
+          <input id="amount"
+            type="number"
+            step="0.01"
+            required
+            x-model="amount"
+            x-effect="$refs.validationHelper.textContent = amountInvalid(amount) ? invalidMessage : validMessage; $el.setAttribute('aria-invalid', amountInvalid(amount));"
+            name="amount"
+            :value="amount"
+            placeholder="Number"
+            min="0"
+            aria-label="Number"
+            aria-invalid="false"
+            aria-describedby="validation-helper">
+          <input type="submit"
+            value="Convert" />
         </fieldset>
-
-        <button type="submit">
-          Convert
-        </button>
+        <small id="validation-helper"
+          x-ref="validationHelper"></small>
       </form>
 
       <!--Result-->
-      <div id="result"></div>
+      <div>
+        <strong id="result"></strong>
+      </div>
     </section>
 
+    <hr>
+
     <section>
-      <h2>Reference Table</h2>
+      <hgroup>
+        <h2>Reference Table</h2>
+        <p>Current exchange rate to USD</p>
+      </hgroup>
       <table>
         <thead>
           <tr>
-            <th>Currency pair</th>
+            <th>Currency Code</th>
             <th>Rate</th>
           </tr>
         </thead>
@@ -88,10 +100,9 @@
         method: "GET",
         success: function(currencies) {
           currencies.forEach(function(currency) {
-            const quoteCurrency = currency.pair.split('_')[1];
             $('select').append(
-              `<option value="${currency.id}">${quoteCurrency}</option>`);
-            $('table tbody').append('<tr><td>' + currency.pair + '</td><td>' + currency.rate +
+              `<option value="${currency.code}">${currency.code}</option>`);
+            $('table tbody').append('<tr><td>USD_' + currency.code + '</td><td>' + currency.rate +
               '</td></tr>');
           });
         },
@@ -114,7 +125,7 @@
           method: 'POST',
           data: $('form').serialize(),
           success: function(response) {
-            $('#result').html('<hr>' + response + '<hr>');
+            $('#result').html('<hr>' + response);
           },
           error: function(xhr, status, error) {
             console.error("Error calculating the currency value.");
