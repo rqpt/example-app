@@ -51,6 +51,10 @@ git clone https://github.com/rqpt/example-app \
 
 ![20240903_14h00m57s_grim](https://github.com/user-attachments/assets/9a218b57-d081-4ab4-a002-0301020b5194)
 
+![20240903_14h30m13s_grim](https://github.com/user-attachments/assets/d1402fce-6176-4a6b-ba64-5f655d32f63b)
+
+![20240903_14h30m52s_grim](https://github.com/user-attachments/assets/0b4bdc4d-9e90-41d5-9185-60a9bddc3d5c)
+
 .
 
 .
@@ -89,5 +93,6 @@ git clone https://github.com/rqpt/example-app \
 
 ![20240903_14h01m41s_grim](https://github.com/user-attachments/assets/e3d06789-56ed-4ee4-9c88-7653351be7ac)
 
+![20240903_14h31m28s_grim](https://github.com/user-attachments/assets/ff9ae092-bac0-40ec-874f-aebee8fd4635)
 
-
+![20240903_14h32m03s_grim](https://github.com/user-attachments/assets/57678fdc-1039-4e0b-9a5d-73143f4f04ec)
