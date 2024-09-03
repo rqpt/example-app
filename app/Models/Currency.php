@@ -11,12 +11,14 @@ class Currency extends Model
 {
     use \Sushi\Sushi;
 
+    /** @var array<string, string> */
     protected $schema = [
         'id' => 'integer',
         'pair' => 'string',
         'rate' => 'float',
     ];
 
+    /** @return array<int, mixed>  */
     public function getRows(): array
     {
         $forexRates = json_decode(Http::get('https://www.completeapi.com/free_currencies.min.json')->body(), true)['forex'];
@@ -30,7 +32,7 @@ class Currency extends Model
         }));
     }
 
-    public function convert(int|float $amount): string
+    public function convert(int|float $amount): string|false
     {
         return Number::currency($amount / $this->rate);
     }
