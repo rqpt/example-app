@@ -24,7 +24,7 @@ Make sure your scheme is http, _**not**_ https.
 
 ## Local Setup
 
-1. Run this oneliner
+1. Run this one-liner
 
 ```bash
 git clone https://github.com/rqpt/example-app \
