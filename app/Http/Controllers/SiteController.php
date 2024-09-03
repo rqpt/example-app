@@ -23,7 +23,7 @@ class SiteController
     /**
      * I think this might lose me points, but I decided to find
      * the currency by ID, rather than using the quote currency
-     * to do a where like '_{$request->quote}' query.
+     * to do a where like '%_{$request->quote}' query.
      */
     public function convertCurrency(Request $request): string|false
     {
