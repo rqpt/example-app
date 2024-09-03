@@ -35,9 +35,9 @@ git clone https://github.com/rqpt/example-app \
 
 ## Screenshots
 
-![20240902_23h08m16s_grim](https://github.com/user-attachments/assets/48f0b46b-11f1-4c6b-bdf4-636ff50c45c1)
+![20240903_09h25m14s_grim](https://github.com/user-attachments/assets/7df8f776-e7f3-4825-b304-dbbbc978a68e)
 
-![20240902_23h09m06s_grim](https://github.com/user-attachments/assets/72228e8a-e792-4229-89d3-d16d42ac2fa5)
+![20240903_09h26m15s_grim](https://github.com/user-attachments/assets/0e74103b-3b52-483c-9866-b9d763d37dba)
 
 ![20240902_23h10m10s_grim](https://github.com/user-attachments/assets/c2400428-dbe2-4bb7-a873-162d8346e9d0)
 
