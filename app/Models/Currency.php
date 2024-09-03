@@ -26,7 +26,10 @@ class Currency extends Model
         'rate' => 'float',
     ];
 
-    /** @return array{int, array{''}}  */
+    /**
+    * Sushi uses an sqlite db behind the scenes, and this
+    * is how we dynamically populate it with records.
+    */
     public function getRows(): array
     {
         $forexRates = Http::exchangeRates()->get('/')->json()['forex'];
