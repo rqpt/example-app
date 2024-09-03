@@ -31,6 +31,8 @@ git clone https://github.com/rqpt/example-app \
 && php artisan optimize \
 && php artisan serve
 ```
+2. Navigate to http://127.0.0.1:8000
+
 ## Demo site
 
 I can spin up a demo site if you would prefer not to install anything. I believe they only
@@ -39,8 +41,6 @@ last for one hour, so if it is down, just drop me a message.
 http://teruza-rqpt.laravel-sail.site:8080/
 
 Make sure your scheme is http, _**not**_ https.
-
-2. Navigate to http://127.0.0.1:8000
 
 ## Screenshots
 
