@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+lang="en"
+x-ref="root"
+x-data="{ lightMode: window.matchMedia('(prefers-color-scheme: light)').matches }">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
