@@ -7,6 +7,14 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Number;
 
+/**
+ * For this model, I thought it might be a good idea to
+ * pull in this Laravel Sushi package, so that we can
+ * query the API data using Eloquent methods.
+ *
+ * It caches the response from our API call and
+ * its also just really nice to use 😁.
+ */
 class Currency extends Model
 {
     use \Sushi\Sushi;
@@ -32,6 +40,10 @@ class Currency extends Model
         }));
     }
 
+    /**
+     * The Number::currency() method converts to USD
+     * by default, so that was pretty convenient.
+     */
     public function convert(int|float $amount): string
     {
         return Number::currency($amount / $this->rate);
