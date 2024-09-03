@@ -18,10 +18,10 @@ class Currency extends Model
         'rate' => 'float',
     ];
 
-    /** @return array<int, mixed>  */
+    /** @return array{int, array{''}}  */
     public function getRows(): array
     {
-        $forexRates = json_decode(Http::get('https://www.completeapi.com/free_currencies.min.json')->body(), true)['forex'];
+        $forexRates = Http::exchangeRates()->get('/')->json()['forex'];
 
         $id = 0;
 
@@ -32,7 +32,7 @@ class Currency extends Model
         }));
     }
 
-    public function convert(int|float $amount): string|false
+    public function convert(int|float $amount): string
     {
         return Number::currency($amount / $this->rate);
     }
