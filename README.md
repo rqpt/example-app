@@ -23,6 +23,7 @@ git clone https://github.com/rqpt/example-app \
 && mkdir ./resources/svg \
 && composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
+&& npm run build \
 && php artisan migrate \
 && php artisan key:generate \
 && php artisan icons:cache \
