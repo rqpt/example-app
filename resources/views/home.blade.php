@@ -119,7 +119,7 @@
           method: 'POST',
           data: $('form').serialize(),
           success: function(response) {
-            $('#result').text('<hr>' + response + '<hr>');
+            $('#result').html('<hr>' + response + '<hr>');
           },
           error: function(xhr, status, error) {
             console.error("Error calculating the currency value.");

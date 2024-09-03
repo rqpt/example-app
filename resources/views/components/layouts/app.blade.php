@@ -10,6 +10,10 @@
     <meta name="csrf-token"
       content="{{ csrf_token() }}">
 
+    <!-- DOMPurify for XSS protection -->
+    <!--Could not get this working for some reason-->
+    <!--<script type="text/javascript" src="src/purify.js"></script>-->
+
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
