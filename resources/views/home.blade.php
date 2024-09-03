@@ -5,6 +5,9 @@
     <section x-data="{
         amount: 0,
         quote: false,
+        amountInvalid: (amount) => amount < 0 || isNaN(parseInt(amount)),
+        invalidMessage: 'Positive amounts only...and no letters! 😡',
+        validMessage: 'Valid amount! 😄',
     }">
       <h2>Convert</h2>
 
@@ -34,16 +37,16 @@
             <input type="number"
               required
               x-model="amount"
-              x-effect="$refs.amountValidHelper.textContent = amount < 0 || isNaN(parseInt(amount)) ? 'Please provide a positive number.' : 'Valid amount'; $el.setAttribute('aria-invalid', amount < 0 || isNaN(parseInt(amount)));"
+              x-effect="$refs.validationHelper.textContent = amountInvalid(amount) ? invalidMessage : validMessage; $el.setAttribute('aria-invalid', amountInvalid(amount));"
               name="amount"
               :value="amount"
               placeholder="Number"
               min="0"
               aria-label="Number"
               aria-invalid="false"
-              aria-describedby="amount-valid-helper">
-            <small id="amount-valid-helper"
-              x-ref="amountValidHelper"></small>
+              aria-describedby="validation-helper">
+            <small id="validation-helper"
+              x-ref="validationHelper"></small>
           </label>
         </fieldset>
 
