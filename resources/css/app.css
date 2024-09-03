@@ -22,3 +22,10 @@
         scrollbar-color: var(--scrollbarBG) transparent;
     }
 }
+
+/* Pico Overrides */
+
+.pico-button-override {
+    background: transparent;
+    border: transparent;
+}
