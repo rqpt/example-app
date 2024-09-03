@@ -12,8 +12,7 @@ use Illuminate\Support\Number;
  * pull in this Laravel Sushi package, so that we can
  * query the API data using Eloquent methods.
  *
- * It caches the response from our API call and
- * its also just really nice to use 😁.
+ * It is also just really nice to use 😁.
  */
 class Currency extends Model
 {
@@ -53,6 +52,10 @@ class Currency extends Model
         return Number::currency($amount / $this->rate);
     }
 
+    /**
+     * Here is where we declare we would
+     * like to cache the API response
+     */
     protected function sushiShouldCache(): bool
     {
         return true;
