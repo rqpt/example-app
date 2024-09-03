@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Number;
 
 class Currency extends Model
@@ -25,6 +25,7 @@ class Currency extends Model
 
         return array_values(Arr::map($forexRates, function ($rate, $currency) use (&$id) {
             $id++;
+
             return ['id' => $id, 'pair' => $currency, 'rate' => $rate];
         }));
     }
