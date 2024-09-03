@@ -2,8 +2,8 @@
 
 Thanks for considering me for the position!
 
-Below are some setup instructions, in case you want to setup the project yourself.
-Else, there are some screenshots that should give you the gist of things.
+Below are some setup instructions, in case you want to setup the project yourself,
+else there are some screenshots that should give you the gist of things.
 
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
