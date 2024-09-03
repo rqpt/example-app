@@ -9,7 +9,7 @@ Please note, I got stuck with the CSRF and XSS requirements. It's probably somet
 simple I'm overlooking, but I've commented out those implementations for now.
 
 Also there isn't any handling in place for network issues with the API or invalid pairs
-\- will need to revisit that later.
+\- will need to revisit that later. I have added some tests though.
 
 ## Setup
 
