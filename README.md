@@ -51,6 +51,13 @@ git clone https://github.com/rqpt/example-app \
 
 ![20240903_14h00m57s_grim](https://github.com/user-attachments/assets/9a218b57-d081-4ab4-a002-0301020b5194)
 
+.
+
+.
+
+.
+
+.
 
 **FLASHBANG WARNING!**
 
