@@ -36,6 +36,7 @@
             </option>
 
             <!--The options here will be populated by the ajax call-->
+            <!--Please refer to resources/js/app.js-->
 
           </select>
 
@@ -88,6 +89,7 @@
         <tbody>
 
           <!--The table body here will be populated by the ajax call-->
+          <!--Please refer to resources/js/app.js-->
 
         </tbody>
       </table>
