@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Number;
+use Illuminate\Support\Str;
 
 /**
  * For this model, I thought it might be a good idea to
@@ -21,14 +22,14 @@ class Currency extends Model
     /** @var array<string, string> */
     protected $schema = [
         'id' => 'integer',
-        'pair' => 'string',
+        'code' => 'string',
         'rate' => 'float',
     ];
 
     /**
-    * Sushi uses an sqlite db behind the scenes, and this
-    * is how we dynamically populate it with records.
-    */
+     * Sushi uses an sqlite db behind the scenes, and this
+     * is how we dynamically populate it with records.
+     */
     public function getRows(): array
     {
         // See ExchangeRateServiceProvider for macro implementation.
@@ -36,10 +37,12 @@ class Currency extends Model
 
         $id = 0;
 
-        return array_values(Arr::map($forexRates, function ($rate, $currency) use (&$id) {
+        return array_values(Arr::map($forexRates, function ($rate, $pair) use (&$id) {
             $id++;
 
-            return ['id' => $id, 'pair' => $currency, 'rate' => $rate];
+            $code = Str::after($pair, '_');
+
+            return compact('id', 'code', 'rate');
         }));
     }
 

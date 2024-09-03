@@ -17,22 +17,23 @@ class SiteController
     /** @return Collection<int, Currency>  */
     public function fetchRates(): Collection
     {
-        return Currency::all();
+        return Currency::query()
+            ->orderBy('code')
+            ->get();
     }
 
     /**
-     * I think this might lose me points, but I decided to find
-     * the currency by ID, rather than using the quote currency
-     * to do a where like '%_{$request->quote}' query.
+     * Our conversion method. We find the currency record by the
+     * code column, and then do our conversion from there.
      */
     public function convertCurrency(Request $request): string|false
     {
         $request->validate([
-            'quote' => ['required'],
+            'code' => ['required'],
             'amount' => ['required', 'min:0'],
         ]);
 
-        $exchange = Currency::findOrFail((int) $request->quote);
+        $exchange = Currency::whereCode($request->code)->first();
 
         return $exchange->convert($request->amount);
     }
