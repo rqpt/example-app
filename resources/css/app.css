@@ -1,1 +1,24 @@
+/* Scrollbar  */
 
+:root {
+    --scrollbarBG: #0097A7;
+    --thumbBG: #00895a;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--thumbBG);
+}
+
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-color: var(--scrollbarBG) transparent;
+    }
+}
