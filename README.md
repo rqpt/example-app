@@ -3,7 +3,8 @@
 Thanks for considering me for the position!
 
 Below are some setup instructions, in case you want to setup the project yourself,
-else there are some screenshots that should give you the gist of things.
+a demo site that might or might not be up at the time you're reading this,
+else some screenshots that should give you the gist of things.
 
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
@@ -11,7 +12,7 @@ simple I'm overlooking, but I've commented out those implementations for now.
 Also there isn't any handling in place for network issues with the API or invalid currency codes
 \- I will need to revisit those later. I have added some tests though.
 
-## Setup
+## Local Setup
 
 1. Run this oneliner
 
@@ -30,6 +31,14 @@ git clone https://github.com/rqpt/example-app \
 && php artisan optimize \
 && php artisan serve
 ```
+## Demo site
+
+I can spin up a demo site if you would prefer not to install anything. I believe they only
+last for one hour, so if it is down, just drop me a message.
+
+http://teruza-rqpt.laravel-sail.site:8080/
+
+Make sure your scheme is http, _**not**_ https.
 
 2. Navigate to http://127.0.0.1:8000
 
