@@ -11,7 +11,7 @@
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.jade.min.css">
 
-    @vite('resources/css/app.css')
+    @vite('resources/app.css')
 
     <title>Teruza</title>
   </head>
