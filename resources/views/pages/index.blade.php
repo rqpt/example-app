@@ -7,7 +7,7 @@
 <?php
 
 use function Livewire\Volt\{state, rules};
-use App\Currency;
+use App\Models\Currency;
 
 state(['currencies' => Currency::all()])->locked();
 state([
@@ -17,7 +17,7 @@ state([
 ]);
 
 rules([
-    'code' => ['required', 'string', 'size:3', 'exists:App\Currency,code'],
+    'code' => ['required', 'string', 'size:3', 'exists:App\Models\Currency,code'],
     'amount' => ['required', 'numeric', 'gte:0'],
 ]);
 

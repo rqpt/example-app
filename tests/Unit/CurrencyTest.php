@@ -1,6 +1,6 @@
 <?php
 
-use App\Currency;
+use App\Models\Currency;
 
 it('can fetch exchange rates', function () {
     $exchangeRateCount = Currency::count();

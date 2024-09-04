@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -21,15 +21,6 @@ class Currency extends Model
     use \Sushi\Sushi;
 
     /**
-     * @var array<string, string>
-     */
-    protected $schema = [
-        'id' => 'integer',
-        'code' => 'string',
-        'rate' => 'float',
-    ];
-
-    /**
      * Sushi uses an sqlite db behind the scenes, and this
      * is how we dynamically populate it with records.
      */
@@ -38,16 +29,12 @@ class Currency extends Model
         // See ExchangeRateServiceProvider for macro implementation.
         $forexRates = Http::exchangeRates()->get('/')->json()['forex'];
 
-        $id = 0;
-
         return array_values(
             Arr::map(
-                $forexRates, function ($rate, $pair) use (&$id) {
-                    $id++;
-
+                $forexRates, function ($rate, $pair) {
                     $code = Str::after($pair, '_');
 
-                    return compact('id', 'code', 'rate');
+                    return compact('code', 'rate');
                 }
             )
         );
