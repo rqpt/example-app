@@ -56,8 +56,6 @@ class Currency extends Model
     /**
      * We want to sort these currencies alphabetically, so we
      * might as well scope them that way from the get go.
-     *
-     * @return void
      */
     protected static function booted(): void
     {
