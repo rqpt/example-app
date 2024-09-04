@@ -30,6 +30,7 @@ git clone https://github.com/rqpt/example-app \
 && cd example-app \
 && cp .env.example .env \
 && touch ./database/database.sqlite \
+&& mkdir -p ./tests/Feature \
 && composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
 && npm run build \
