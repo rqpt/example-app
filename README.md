@@ -30,17 +30,18 @@ git clone https://github.com/rqpt/example-app \
 && cd example-app \
 && cp .env.example .env \
 && touch ./database/database.sqlite \
+&& mkdir -p ./tests/Feature \
 && composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
 && npm run build \
 && php artisan migrate \
 && php artisan key:generate \
-&& php artisan icons:cache \
 && php artisan optimize \
 && php artisan serve
 ```
+2. _(Optional)_ Run `./vendor/bin/pest` to run the included unit tests.
 
-2. Navigate to http://127.0.0.1:8000
+3. Navigate to http://127.0.0.1:8000
 
 ## Screenshots
 

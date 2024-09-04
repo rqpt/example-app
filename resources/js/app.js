@@ -1,5 +1,3 @@
-import "./bootstrap";
-
 $(document).ready(function () {
     const technicalDifficultiesMessage =
         '<p>It seems we are having some technical difficulties. Please try again in a couple of minutes.</p><p>If the issue persists, please contact the website owner at <a href="mailto:ernstvermeulen@proton.me">ernstvermeulen@proton.me</a></p>';
