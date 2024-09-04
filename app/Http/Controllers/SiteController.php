@@ -14,7 +14,9 @@ class SiteController
         return view('home');
     }
 
-    /** @return Collection<int, Currency>  */
+    /**
+     * @return Collection<int, Currency>
+     */
     public function fetchRates(): Collection
     {
         return Currency::query()
@@ -28,10 +30,12 @@ class SiteController
      */
     public function convertCurrency(Request $request): string|false
     {
-        $request->validate([
-            'code' => ['required'],
-            'amount' => ['required', 'min:0'],
-        ]);
+        $request->validate(
+            [
+                'code' => ['required', 'string', 'size:3', 'exists:currencies,code'],
+                'amount' => ['required', 'numeric', 'gte:0'],
+            ]
+        );
 
         $exchange = Currency::whereCode($request->code)->first();
 
