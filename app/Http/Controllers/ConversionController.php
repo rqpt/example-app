@@ -6,9 +6,6 @@ use App\Models\Currency;
 use Illuminate\Http\Request;
 
 /**
- * Our conversion method. We find the currency record by the
- * code column, and then do our conversion from there.
- *
  * We want to make sure the amount is a positive numeric value, and
  * the currency code is a string with an exact size of 3 characters.
  *
