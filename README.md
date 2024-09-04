@@ -6,11 +6,13 @@ Below are some setup instructions, in case you want to setup the project yoursel
 a demo site that might or might not be up at the time you're reading this,
 else some screenshots that should give you the gist of things.
 
+There are also a couple of tests included.
+
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
 
 Also there isn't any handling in place for invalid currency codes
-\- I will need to revisit those later. I have added some tests though.
+\- I will need to revisit that later as well.
 
 ## Demo site
 
