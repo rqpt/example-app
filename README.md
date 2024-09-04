@@ -11,9 +11,6 @@ There are also a couple of tests included.
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
 
-Also there isn't any handling in place for invalid currency codes
-\- I will need to revisit that later as well.
-
 ## Demo site
 
 I spun up a demo site in case you prefer not to install anything. I believe they only
