@@ -24,11 +24,11 @@ rules([
 $convert = function () {
     $validated = $this->validate();
 
-    $exchange = Currency::whereCode($validated['code'])->first();
+    $quoteCurrency = Currency::whereCode($validated['code'])->first();
 
-    $convertedAmount = $exchange->convert($validated['amount']);
+    $baseAmount = $quoteCurrency->convert($validated['amount']);
 
-    $this->convertedResult = "<hr><strong>The converted value is <mark>{$convertedAmount}</mark></strong>";
+    $this->convertedResult = "<hr><strong>The converted value is <mark>{$baseAmount}</mark></strong>";
 };
 
 ?>
