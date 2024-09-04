@@ -9,11 +9,17 @@ return Application::configure(basePath: dirname(__DIR__))
         web: __DIR__.'/../routes/web.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
-        $middleware->validateCsrfTokens(except: [
-            '*',
-        ]);
-    })
-    ->withExceptions(function (Exceptions $exceptions) {
-        //
-    })->create();
+    ->withMiddleware(
+        function (Middleware $middleware) {
+            $middleware->validateCsrfTokens(
+                except: [
+                '*',
+                ]
+            );
+        }
+    )
+    ->withExceptions(
+        function (Exceptions $exceptions) {
+            //
+        }
+    )->create();
