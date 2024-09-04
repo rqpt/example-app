@@ -19,7 +19,7 @@ simple I'm overlooking, but I've commented out those implementations for now.
 
 Just wanted to clarify why I prefer this implementation.
 
-This one allows us to totally get rid of our `/routes`, `app/Http/Controllers`, and
+This one allows us to totally get rid of our `/routes`, `/app/Http/Controllers`, and
 our `/resources/js`, while keeping everything working 100% fine as it did before.
 
 This is thanks to a combo of the Livewire Volt and Laravel Folio packages.
