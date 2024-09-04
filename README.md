@@ -30,7 +30,6 @@ git clone https://github.com/rqpt/example-app \
 && cd example-app \
 && cp .env.example .env \
 && touch ./database/database.sqlite \
-&& mkdir ./resources/svg \
 && composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
 && npm run build \
@@ -40,6 +39,7 @@ git clone https://github.com/rqpt/example-app \
 && php artisan optimize \
 && php artisan serve
 ```
+
 2. Navigate to http://127.0.0.1:8000
 
 ## Screenshots
