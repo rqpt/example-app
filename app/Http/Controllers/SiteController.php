@@ -32,7 +32,9 @@ class SiteController
     {
         $request->validate(
             [
-                'code' => ['required', 'string', 'size:3', 'exists:currencies,code'],
+                // As the currencies table is not directly managed by us, we need to specify
+                // the fully qualified model class path for the exists validation rule
+                'code' => ['required', 'string', 'size:3', 'exists:App\Models\Currency,code'],
                 'amount' => ['required', 'numeric', 'gte:0'],
             ]
         );
