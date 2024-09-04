@@ -8,14 +8,13 @@ use Illuminate\Support\ServiceProvider;
 class ExchangeRateServiceProvider extends ServiceProvider
 {
     /**
-     * We set up this little Http macro so our model is a bit
-     * cleaner. It fetches the API URL from our config/env,
-     * so in our model we have a nice clean api.
+     * We set up this Http macro so our model is a bit cleaner,
+     * and we have a nice and simple API to work with.
      */
     public function boot(): void
     {
-        Http::macro('exchangeRates', function () {
-            return Http::baseUrl(config('third-party-api.exchange-rates'));
-        });
+        $url = 'https://www.completeapi.com/free_currencies.min.json';
+
+        Http::macro('exchangeRates', fn () => Http::baseUrl($url));
     }
 }

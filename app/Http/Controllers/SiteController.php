@@ -19,9 +19,7 @@ class SiteController
      */
     public function fetchRates(): Collection
     {
-        return Currency::query()
-            ->orderBy('code')
-            ->get();
+        return Currency::all();
     }
 
     /**
