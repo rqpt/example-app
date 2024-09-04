@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
@@ -19,7 +20,9 @@ class Currency extends Model
 {
     use \Sushi\Sushi;
 
-    /** @var array<string, string> */
+    /**
+     * @var array<string, string>
+     */
     protected $schema = [
         'id' => 'integer',
         'code' => 'string',
@@ -37,13 +40,32 @@ class Currency extends Model
 
         $id = 0;
 
-        return array_values(Arr::map($forexRates, function ($rate, $pair) use (&$id) {
-            $id++;
+        return array_values(
+            Arr::map(
+                $forexRates, function ($rate, $pair) use (&$id) {
+                    $id++;
 
-            $code = Str::after($pair, '_');
+                    $code = Str::after($pair, '_');
 
-            return compact('id', 'code', 'rate');
-        }));
+                    return compact('id', 'code', 'rate');
+                }
+            )
+        );
+    }
+
+    /**
+     * We want to sort these currencies alphabetically, so we
+     * might as well scope them that way from the get go.
+     *
+     * @return void
+     */
+    protected static function booted(): void
+    {
+        static::addGlobalScope(
+            'alphabetised', function (Builder $builder) {
+                $builder->orderBy('code');
+            }
+        );
     }
 
     /**

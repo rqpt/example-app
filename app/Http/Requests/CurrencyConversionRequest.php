@@ -26,6 +26,8 @@ class CurrencyConversionRequest extends FormRequest
     public function rules(): array
     {
         return [
+            // As we are not managing the currencies table ourselves, we need to specify
+            // the fully qualified Currency model classname for our exists rule.
             'code' => ['required', 'string', 'size:3', 'exists:App\Models\Currency,code'],
             'amount' => ['required', 'numeric', 'gte:0'],
         ];
