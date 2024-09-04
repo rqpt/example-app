@@ -35,7 +35,6 @@ git clone https://github.com/rqpt/example-app \
 && npm run build \
 && php artisan migrate \
 && php artisan key:generate \
-&& php artisan icons:cache \
 && php artisan optimize \
 && php artisan serve
 ```
