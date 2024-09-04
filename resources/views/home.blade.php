@@ -8,9 +8,15 @@
   <main>
     <h1>Forex Conversion & Reference</h1>
 
-    <x-currency-converter />
+    <hr>
 
-    <x-reference-table />
+    <div id="features">
+      <x-currency-converter />
+
+      <hr>
+
+      <x-reference-table />
+    </div>
 
   </main>
   <script>

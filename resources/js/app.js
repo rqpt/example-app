@@ -1,40 +1,54 @@
-import './bootstrap';
+import "./bootstrap";
 
-$(document).ready(function() {
+$(document).ready(function () {
+    const technicalDifficultiesMessage =
+        "<p>It seems we are having some technical difficulties. Please try again in a couple of minutes.</p>";
+
     $.ajax({
         url: "/rates",
         method: "GET",
-        success: function(currencies) {
-            currencies.forEach(function(currency) {
-                $('select').append(
-                    `<option value="${currency.code}">${currency.code}</option>`);
-                $('table tbody').append('<tr><td>USD_' + currency.code + '</td><td>' + currency.rate + '</td></tr>');
+        success: function (currencies) {
+            currencies.forEach(function (currency) {
+                $("select").append(
+                    `<option value="${currency.code}">${currency.code}</option>`,
+                );
+                $("table tbody").append(
+                    "<tr><td>USD_" +
+                        currency.code +
+                        "</td><td>" +
+                        currency.rate +
+                        "</td></tr>",
+                );
             });
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
+            $("#features").replaceWith(technicalDifficultiesMessage);
             console.error("Error fetching data from /rates endpoint.");
-        }
+        },
     });
 
-    $('form').on('submit', function(e) {
+    $("form").on("submit", function (e) {
         e.preventDefault();
 
         //$.ajaxSetup({
-            //  headers: {
-                //  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                //  }
-            //});
+        //  headers: {
+        //  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //  }
+        //});
 
         $.ajax({
-            url: '/convert',
-            method: 'POST',
-            data: $('form').serialize(),
-            success: function(response) {
-                $('#result').html('<hr>The converted value is <mark>' + response + '</mark>');
+            url: "/convert",
+            method: "POST",
+            data: $("form").serialize(),
+            success: function (response) {
+                $("#result").html(
+                    "<hr>The converted value is <mark>" + response + "</mark>",
+                );
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
+                $("#features").replaceWith(technicalDifficultiesMessage);
                 console.error("Error calculating the currency value.");
-            }
-        })
-    })
+            },
+        });
+    });
 });
