@@ -32,8 +32,8 @@ class SiteController
     {
         $validated = $request->validated();
 
-        $exchange = Currency::whereCode($validated['code'])->first();
+        $quoteCurrency = Currency::whereCode($validated['code'])->first();
 
-        return $exchange->convert($validated['amount']);
+        return $quoteCurrency->convert($validated['amount']);
     }
 }
