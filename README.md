@@ -44,12 +44,10 @@ Make sure your scheme is http, _**not**_ https.
 git clone https://github.com/rqpt/example-app \
 && cd example-app \
 && cp .env.example .env \
-&& touch ./database/database.sqlite \
 && mkdir -p ./tests/Feature \
 && composer install --no-dev --no-interaction --optimize-autoloader \
 && npm install \
 && npm run build \
-&& php artisan migrate \
 && php artisan key:generate \
 && php artisan optimize \
 && php artisan serve
