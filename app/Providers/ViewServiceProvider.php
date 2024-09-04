@@ -7,8 +7,8 @@ use Laravel\Folio\Folio;
 use Livewire\Volt\Volt;
 
 /**
- * Here, we register Folio and Volt, so we can get rid
- * of our routes and controller completely.
+ * Here is where we register Folio and Volt, so we can
+ * get rid of our routes and controller completely.
  */
 class ViewServiceProvider extends ServiceProvider
 {
