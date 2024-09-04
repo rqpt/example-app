@@ -13,8 +13,6 @@ use Illuminate\Support\Str;
  * For this model, I thought it might be a good idea to
  * pull in this Laravel Sushi package, so that we can
  * query the API data using Eloquent methods.
- *
- * It is also just really nice to use 😁.
  */
 class Currency extends Model
 {
@@ -26,7 +24,6 @@ class Currency extends Model
      */
     public function getRows(): array
     {
-        // See ExchangeRateServiceProvider for macro implementation.
         $forexRates = Http::exchangeRates()->get('/')->json()['forex'];
 
         return array_values(
@@ -54,8 +51,8 @@ class Currency extends Model
     }
 
     /**
-     * The Number::currency() method converts to USD
-     * by default, so that was pretty convenient.
+     * Number::currency() converts to USD by
+     * default, so that was pretty convenient.
      */
     public function convert(int|float $amount): string
     {
@@ -63,8 +60,8 @@ class Currency extends Model
     }
 
     /**
-     * Here is where we declare we would
-     * like to cache the API response
+     * Here is where we set Sushi up to cache
+     * the API responses.
      */
     protected function sushiShouldCache(): bool
     {
