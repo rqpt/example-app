@@ -2,12 +2,19 @@ import "./bootstrap";
 
 $(document).ready(function () {
     const technicalDifficultiesMessage =
-        "<p>It seems we are having some technical difficulties. Please try again in a couple of minutes.</p>";
+        '<p>It seems we are having some technical difficulties. Please try again in a couple of minutes.</p><p>If the issue persists, please contact the website owner at <a href="mailto:ernstvermeulen@proton.me">ernstvermeulen@proton.me</a></p>';
 
     $.ajax({
         url: "/rates",
         method: "GET",
         success: function (currencies) {
+            console.log(currencies);
+
+            if (currencies.length === 0) {
+                $("#features").replaceWith(technicalDifficultiesMessage);
+                return;
+            }
+
             currencies.forEach(function (currency) {
                 $("select").append(
                     `<option value="${currency.code}">${currency.code}</option>`,
