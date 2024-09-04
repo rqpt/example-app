@@ -15,6 +15,17 @@ used for the demo site.
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
 
+## Personal Preferred Approach Branch
+
+Just wanted to clarify why I prefer this implementation.
+
+This one allows us to totally get rid of our `/routes`, `app/Http/Controllers`, and
+our `/resources/js`, while keeping everything working 100% fine as it did before.
+
+This is thanks to a combo of the Livewire Volt and Laravel Folio packages.
+
+Idk... I just like things pretty lean and minimal.
+
 ## Demo site
 
 I spun up a demo site in case you prefer not to install anything. I believe they only
@@ -43,6 +54,7 @@ git clone https://github.com/rqpt/example-app \
 && php artisan optimize \
 && php artisan serve
 ```
+
 2. Navigate to http://127.0.0.1:8000
 
 ## Screenshots
