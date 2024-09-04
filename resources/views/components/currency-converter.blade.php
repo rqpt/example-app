@@ -11,7 +11,6 @@
 
   <form action="/convert"
     method="POST">
-    @csrf
     <label>
       Quote Currency
       <select name="code"

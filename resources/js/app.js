@@ -32,17 +32,17 @@ $(document).ready(function () {
 
     $("form").on("submit", function (e) {
         e.preventDefault();
+        const token = $('meta[name="csrf-token"]').attr("content");
 
-        //$.ajaxSetup({
-        //  headers: {
-        //  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //  }
-        //});
+        console.log(token);
 
         $.ajax({
             url: "/convert",
             method: "POST",
             data: $("form").serialize(),
+            //headers: {
+            //    "X-CSRF-TOKEN": token,
+            //},
             success: function (response) {
                 $("#result").html(
                     "<hr>The converted value is <mark>" + response + "</mark>",
