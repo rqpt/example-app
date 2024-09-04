@@ -14,7 +14,7 @@ Also there isn't any handling in place for network issues with the API or invali
 
 ## Demo site
 
-I spinned up a demo site in case you prefer not to install anything. I believe they only
+I spun up a demo site in case you prefer not to install anything. I believe they only
 last for one hour, so if it is down by the time you're reading this and you would like to
 see it, just drop me a message.
 
@@ -24,7 +24,7 @@ Make sure your scheme is http, _**not**_ https.
 
 ## Local Setup
 
-1. Run this oneliner
+1. Run this one-liner
 
 ```bash
 git clone https://github.com/rqpt/example-app \
@@ -50,6 +50,10 @@ git clone https://github.com/rqpt/example-app \
 ![20240903_14h00m25s_grim](https://github.com/user-attachments/assets/b60f49a9-7d9a-4dbf-931e-9c88c60a2a01)
 
 ![20240903_14h00m57s_grim](https://github.com/user-attachments/assets/9a218b57-d081-4ab4-a002-0301020b5194)
+
+![20240903_14h30m13s_grim](https://github.com/user-attachments/assets/d1402fce-6176-4a6b-ba64-5f655d32f63b)
+
+![20240903_14h30m52s_grim](https://github.com/user-attachments/assets/0b4bdc4d-9e90-41d5-9185-60a9bddc3d5c)
 
 .
 
@@ -89,5 +93,6 @@ git clone https://github.com/rqpt/example-app \
 
 ![20240903_14h01m41s_grim](https://github.com/user-attachments/assets/e3d06789-56ed-4ee4-9c88-7653351be7ac)
 
+![20240903_14h31m28s_grim](https://github.com/user-attachments/assets/ff9ae092-bac0-40ec-874f-aebee8fd4635)
 
-
+![20240903_14h32m03s_grim](https://github.com/user-attachments/assets/57678fdc-1039-4e0b-9a5d-73143f4f04ec)
