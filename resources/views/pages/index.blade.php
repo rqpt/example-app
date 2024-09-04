@@ -13,7 +13,7 @@ state(['currencies' => Currency::all()])->locked();
 state([
     'code' => '',
     'amount' => 0,
-    'convertedResult' => ''
+    'convertedResult' => '',
 ]);
 
 rules([
