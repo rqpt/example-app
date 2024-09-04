@@ -9,21 +9,23 @@
     <p>How many USD for a specified currency.</p>
   </hgroup>
 
-  <form action="/convert"
-    method="POST">
+  <form wire:submit.prevent="convert">
     <label>
       Quote Currency
-      <select name="code"
+      <select wire:model="code"
+        name="code"
         aria-label="Select a currency to compare from..."
         required>
-        <option selected
-          disabled
+        <option disabled
           value="">
           Select a currency to compare from...
         </option>
 
-        <!--The options here will be populated by an ajax call-->
-        <!--Please refer to resources/js/app.js-->
+        @foreach ($currencies as $currency)
+          <option value="{{ $currency->code }}">
+              {{ $currency->code }}
+          </option>
+        @endforeach
 
       </select>
     </label>
@@ -32,7 +34,8 @@
       Amount
     </label>
     <fieldset role="group">
-      <input id="amount"
+      <input wire:model="amount"
+        id="amount"
         type="number"
         step="0.01"
         required
@@ -54,6 +57,6 @@
 
   <!--Result-->
   <div>
-    <strong id="result"></strong>
+    {!! $convertedResult !!}
   </div>
 </section>

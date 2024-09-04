@@ -10,7 +10,9 @@
     "require": {
         "php": "^8.2",
         "calebporzio/sushi": "^2.5",
-        "laravel/framework": "^11.9"
+        "laravel/folio": "^1.1",
+        "laravel/framework": "^11.9",
+        "livewire/volt": "^1.6"
     },
     "require-dev": {
         "larastan/larastan": "^2.0",

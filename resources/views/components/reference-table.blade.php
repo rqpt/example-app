@@ -12,8 +12,12 @@
     </thead>
     <tbody>
 
-      <!--The table body here will be populated by an ajax call-->
-      <!--Please refer to resources/js/app.js-->
+      @foreach ($currencies as $currency)
+        <tr>
+          <td>USD_{{ $currency->code }}</td>
+          <td>{{ $currency->rate }}</td>
+        </tr>
+      @endforeach
 
     </tbody>
   </table>
