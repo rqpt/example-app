@@ -9,7 +9,7 @@ else some screenshots that should give you the gist of things.
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
 
-Also there isn't any handling in place for network issues with the API or invalid currency codes
+Also there isn't any handling in place for invalid currency codes
 \- I will need to revisit those later. I have added some tests though.
 
 ## Demo site
