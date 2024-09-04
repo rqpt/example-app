@@ -34,7 +34,7 @@ class Currency extends Model
                 $forexRates, function ($rate, $pair) {
                     $code = Str::after($pair, '_');
 
-                    return compact('id', 'code', 'rate');
+                    return compact('code', 'rate');
                 }
             )
         );
