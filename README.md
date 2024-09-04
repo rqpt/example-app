@@ -39,9 +39,7 @@ git clone https://github.com/rqpt/example-app \
 && php artisan optimize \
 && php artisan serve
 ```
-2. _(Optional)_ Run `./vendor/bin/pest` to run the included unit tests.
-
-3. Navigate to http://127.0.0.1:8000
+2. Navigate to http://127.0.0.1:8000
 
 ## Screenshots
 
