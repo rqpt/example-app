@@ -8,8 +8,6 @@ $(document).ready(function () {
         url: "/rates",
         method: "GET",
         success: function (currencies) {
-            console.log(currencies);
-
             if (currencies.length === 0) {
                 $("#features").replaceWith(technicalDifficultiesMessage);
                 return;
