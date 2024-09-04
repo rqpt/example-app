@@ -8,6 +8,10 @@ else some screenshots that should give you the gist of things.
 
 There are also a couple of tests included.
 
+You can also see the `alternative-approach` branch, where the routes, controller and
+validation is handled differently, as well as a dockerised branch used for the demo
+site.
+
 Please note, I got stuck with the CSRF and XSS requirements. It's probably something
 simple I'm overlooking, but I've commented out those implementations for now.
 
