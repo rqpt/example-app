@@ -43,9 +43,11 @@ $(document).ready(function () {
             //headers: {
             //    "X-CSRF-TOKEN": token,
             //},
-            success: function (response) {
+            success: function (baseAmount) {
                 $("#result").html(
-                    "<hr>The converted value is <mark>" + response + "</mark>",
+                    "<hr>The converted value is <mark>" +
+                        baseAmount +
+                        "</mark>",
                 );
             },
             error: function (xhr, status, error) {
